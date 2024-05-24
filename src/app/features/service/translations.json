@@ -1,0 +1,14 @@
+{
+  "en": {
+    "hello": "Hello",
+    "goodbye": "Goodbye"
+  },
+  "tr": {
+    "hello": "Merhaba",
+    "goodbye": "Hoşçakal"
+  },
+  "fr": {
+    "hello": "Bonjour",
+    "goodbye": "Au revoir"
+  }
+}

@@ -1,0 +1,42 @@
+<form [formGroup]="formGroup" (submit)="onFormSubmit()">
+   <div >
+    
+    <label>Name: </label>
+    <input type="text" appNoCharacterInput minlength="4" maxlength="32" formControlName="name" />
+    <div *ngIf="formGroup.get('name')?.errors">
+      {{ formGroup.get('name')?.hasError| formControlErrorMessage }}
+    </div>
+    <!-- ngModel: basit olarak bir girdi alanını bir state'e bağlayarak, değerin iki yönlü olarak atanmasını sağlar.  -->
+ </div>
+
+  <div>
+    <label>Description: </label>
+    <textarea formControlName="description"></textarea>
+    <div *ngIf="formGroup.get('description')?.errors">
+      {{ formGroup.get('description')?.hasError | formControlErrorMessage }}
+    </div>
+  </div>
+  <button appButton type="submit">Add</button>
+</form>
+<br>
+<br>
+<div *appMultiple="4">
+<p>{{ 'hello' | translate:'tr' }} </p> <!-- Türkçe çeviri: Merhaba -->
+<p>{{ 'goodbye' | translate:'fr' }}</p> <!-- Fransızca çeviri: Au revoir -->
+<p>{{ 'welcome_message' | translate:'en' }}</p> <!-- İngilizce çeviri: Welcome to our website! -->
+<p>{{ 'error.not_found' | translate:'tr' }}</p> <!-- Türkçe çeviri: Aradığınız sayfa bulunamadı. -->
+<p>{{ 'error.server_error' | translate:'fr' }}</p> 
+ 
+</div>
+<!-- <div>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="nameInputValue" /> -->
+
+<!-- ngModel: basit olarak bir girdi alanını bir state'e bağlayarak, değerin iki yönlü olarak atanmasını sağlar.  -->
+
+<!-- </div>
+<div>
+  <label>Description: </label>
+  <textarea [(ngModel)]="descriptionInputValue"></textarea>
+</div>
+<button type="button" (click)="onFormSubmit()">Add</button> -->
